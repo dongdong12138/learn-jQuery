@@ -9,6 +9,19 @@
     <script src="https://cdn.bootcdn.net/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
     <script>
         $(function () {
+
+            /**
+             * 知识点：
+             * 1. 作为一般函数调用: $(param)
+             *      参数为函数: 当 DOM 加载完成后，执行此回调函数
+             *      参数为选择器字符串: 查找所有匹配的标签, 并将它们封装成 jQuery 对象
+             *      参数为 DOM 对象: 将 dom 对象封装成 jQuery 对象
+             *      参数为 html 标签字符串（用得少）: 创建标签对象并封装成 jQuery 对象
+             * 2. 作为对象使用: $.xxx()
+             *      $.each(): 隐式遍历数组
+             *      $.trim(): 去除两端的空格
+            */
+
             /**
              * 需求1. 点击按钮: 显示按钮的文本, 显示一个新的输入框
             */
