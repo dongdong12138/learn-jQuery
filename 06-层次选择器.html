@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>06-层次选择器</title>
+    <script src="https://cdn.bootcdn.net/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+    <script>
+        $(() => {
+            
+            /**
+             * 知识点：
+             * 1. parent child
+             *      在给定的祖先元素下匹配所有的后代元素
+             * 2. parent > child
+             *      在给定的父元素下匹配所有的子元素
+             * 3. prev + next
+             *      匹配所有紧接在 prev 元素后的 next 元素
+             * 4. prev ~ siblings
+             *      匹配 prev 元素之后的所有 siblings 元素
+            */
+
+            /**
+             * 1. 选中 ul 下所有的 span
+            */
+            // $('ul span').css({ background: 'red' })
+
+            /**
+             * 2. 选中 ul 下所有的子元素 span
+            */
+            // $('ul > span').css({ background: 'red' })
+
+            /**
+             * 3. 选中 class 为 box 的下一个 li
+            */
+            // $('.box + li').css({ background: 'red' })
+
+            /**
+             * 4. 选中 ul 下的 class 为 box 的元素后面的所有兄弟元素
+            */
+            $('ul > .box ~ *').css({ background: 'red' })
+
+        })
+    </script>
+</head>
+
+<body>
+    <ul>
+        <li>AAAAA</li>
+        <li class="box">CCCCC</li>
+        <li title="hello"><span>BBBBB</span></li>
+        <li title="hello"><span class="box">DDDD</span></li>
+        <span>EEEEE</span>
+    </ul>
+</body>
+
+</html>
