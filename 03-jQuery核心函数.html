@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>03-jQuery核心函数</title>
+    <script src="https://cdn.bootcdn.net/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+    <script>
+        $(function () {
+            /**
+             * 需求1. 点击按钮: 显示按钮的文本, 显示一个新的输入框
+            */
+            $('#btn').click(() => {
+                const text = $(this).text.call($('#btn'))       // 箭头函数没有 this，所以调用 text 方法时，使用 call 绑定 this 为 $('#btn')
+                console.log('text:', text)
+                const $input = $('<input type="text" name="msg3" /><br />')
+                $('body').append($input)
+            })
+
+            /**
+             * 需求2. 遍历输出数组中所有元素值
+            */
+            let arr = [2, 4, 7]
+            // $(arr).each((index, element) => {
+            //     console.log(index, element)
+            // })
+            $.each(arr, (index, value) => {
+                console.log(index, value)
+            })
+
+            /**
+             * 需求3. 去掉"  my atguigu  "两端的空格
+            */
+            let str = "  my atguigu  "
+            str = $.trim(str)
+            console.log(str)
+        })
+    </script>
+</head>
+
+<body>
+    <button id="btn">测试</button>
+    <br />
+
+    <input type="text" name="msg1" /><br />
+    <input type="text" name="msg2" /><br />
+</body>
+
+</html>

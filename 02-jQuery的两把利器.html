@@ -9,11 +9,22 @@
 </head>
 <body>
     <script>
-        console.log('$:', $)          // ƒ (a,b){return new n.fn.init(a,b)}
-        console.log('typeof $:', typeof $)   // function
-        console.log('$ === jQuery:', $ === jQuery)   // true
-        console.log('$ === window.$:', $ === window.$)   // true
+        
+        /**
+         * jQuery 函数
+        */
+        console.log('$:', $)        // ƒ (a,b){return new n.fn.init(a,b)}
+        console.log('typeof $:', typeof $)      // function
+        console.log('$ === jQuery:', $ === jQuery)      // true
+        console.log('$ === window.$:', $ === window.$)      // true
+
+        /**
+         * jQuery 对象
+        */
+        console.log('$():', $())        // n.fn.init {}
         console.log('typeof $():', typeof $())      // "object", 这个对象就是 jQuery 对象
+        console.log('$() instanceof Object:', $() instanceof Object)        // true
+
     </script>    
 </body>
 </html>
