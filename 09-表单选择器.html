@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>09-表单选择器</title>
+    <script src="https://cdn.bootcdn.net/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+    <script>
+        $(function () {
+
+            /**
+             * 知识点：
+             * :disabled
+             * :checked
+             * :selected
+            */
+
+            /**
+             * 1. 选择不可用的文本输入框
+            */
+            // $('input:disabled').css('border', '1px solid red')
+
+            /**
+             * 2. 显示选择爱好 的个数
+            */
+            const hobby = $('input[type=checkbox]:checked')
+            console.log('hobby.length:', hobby.length)
+
+            /**
+             * 3. 显示选择的城市名称
+            */
+            // const select = $('select > option:selected').text()
+            const select = $('select').val()
+            console.log('select:', select)
+
+        })
+    </script>
+</head>
+
+<body>
+    <form>
+        用户名: <input type="text" /><br>
+        密 码: <input type="password" /><br>
+        爱 好:
+        <input type="checkbox" checked="checked" />篮球
+        <input type="checkbox" />足球
+        <input type="checkbox" checked="checked" />羽毛球 <br>
+        性 别:
+        <input type="radio" name="sex" value='male' />男
+        <input type="radio" name="sex" value='female' />女<br>
+        邮 箱: <input type="text" name="email" disabled="disabled" /><br>
+        所在地:
+        <select>
+            <option value="1">北京</option>
+            <option value="2" selected="selected">天津</option>
+            <option value="3">河北</option>
+        </select><br>
+        <input type="submit" value="提交" />
+    </form>
+</body>
+
+</html>
