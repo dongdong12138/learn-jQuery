@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>13-css</title>
+    <script src="https://cdn.bootcdn.net/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+    <script>
+        $(function () {
+
+            /**
+             * 知识点：
+             * 设置 css 样式 / 读取 css 值
+             *      css()
+            */
+
+            /**
+             * 1. 得到第一个p标签的颜色
+            */
+            // const color = $('p').eq(0).css('color')
+            // console.log('color:', color)
+
+            /**
+             * 2. 设置所有 p 标签的文本颜色为 red
+            */
+            // $('p').css('color', 'red')
+
+            /**
+             * 3. 设置第 2 个 p 的字体颜色(#ff0011), 背景(blue), 宽(300px), 高(30px)
+            */
+            $('p').eq(1).css({ color: '#ff0011', backgroundColor: 'blue', width: '300px', height: '30px' })
+
+        })
+    </script>
+</head>
+
+<body>
+    <p style="color: blue;">尚硅谷的后裔</p>
+    <p style="color: green;">太阳的后裔</p>
+</body>
+
+</html>
