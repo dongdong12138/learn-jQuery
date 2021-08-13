@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>16-回到顶部</title>
+    <style>
+        #to_top {
+            width: 30px;
+            height: 40px;
+            font: 14px/20px arial;
+            text-align: center;
+            background: #06c;
+            position: fixed;
+            cursor: pointer;
+            color: #fff;
+            left: 20px;
+            top: 500px;
+        }
+    </style>
+    <script src="https://cdn.bootcdn.net/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+    <script>
+        $(function () {
+            /**
+             * 瞬间回到顶部
+            */
+            // $('#to_top').click(() => {
+            //     $('html, body').scrollTop(0)
+            // })
+
+            /**
+             * 滚动回到顶部
+            */
+            $('#to_top').click(function () {
+                let distance = $('html, body').scrollTop()
+                const timer = setInterval(() => {
+                    distance -= 2
+                    console.log('distance:', distance)
+                    if (distance <= 0) {
+                        distance = 0
+                        clearInterval(timer)
+                    }
+                    $('html, body').scrollTop(distance)
+                }, 2)
+            })
+        })
+    </script>
+</head>
+
+<body style="height: 2000px;">
+    <div id="to_top">返回顶部</div>
+</body>
+
+</html>
